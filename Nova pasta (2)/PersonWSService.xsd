@@ -1,0 +1,61 @@
+
+
+<xs:schema version="1.0" xmlns:xs="http://cobaia2server/">
+
+	<xs:element name="DatabaseErrorException" type="tns:DatabaseErrorException" />
+	<xs:element name="PersonNotFoundException" type="tns:PersonNotFoundException" />
+	<xs:element name="UserAuthenticationException" type="tns:UserAuthenticationException" />
+	<xs:element name="listAll" type="tns:listAll" />
+	<xs:element name="listAllResponse" type="tns:listAllResponse" />
+	<xs:element name="listById" type="tns:listById" />
+	<xs:element name="listByIdResponse" type="tns:listByIdResponse" />
+	<xs:element name="user" nillable="false" type="tns:user" />
+	<xs:complexType name="listById">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="user">
+		<xs:sequence>
+			<xs:element name="login" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="password" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listByIdResponse">
+		<xs:sequence>
+			<xs:element name="person" type="tns:person" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="person">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+			<xs:element name="name" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonNotFoundException">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DatabaseErrorException">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UserAuthenticationException">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listAll">
+		<xs:sequence />
+	</xs:complexType>
+	<xs:complexType name="listAllResponse">
+		<xs:sequence>
+			<xs:element name="person" type="tns:person" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

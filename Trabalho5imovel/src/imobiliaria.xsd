@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/imobiliaria" xmlns:tns="http://www.example.org/imobiliaria" elementFormDefault="qualified">
+
+    <complexType name="imobiliaria">
+    	<sequence>
+    		<element name="imovel" type="tns:imovel"></element>
+    		<element name="consulta" type="tns:consulta"></element>
+    		<element name="cadastro" type="tns:cadastro"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="imovel">
+    	<sequence>
+    		<element name="endereco" type="tns:endereco"></element>
+    		<element name="valor" type="decimal"></element>
+    		<element name="area" type="decimal"></element>
+    		<element name="qtde_quartos" type="int"></element>
+    		<element name="qtde_banheiros" type="int"></element>
+    		<element name="qtde_vagas_garagem" type="int"></element>
+    		<element name="tipo">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="aluguel"></enumeration>
+    					<enumeration value="compra"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="consulta">
+    	<sequence>
+    		<element name="bairro" type="string"></element>
+    		<element name="tipo" type="string"></element>
+    		<element name="minvalor" type="int"></element>
+    		<element name="maxvalor" type="int"></element>
+    		<element name="minarea" type="int"></element>
+    		<element name="maxarea" type="int"></element>
+    		<element name="minquartos" type="string"></element>
+    		<element name="maxquartos" type="string"></element>
+    		<element name="minbanheiros" type="string"></element>
+    		<element name="maxbanheiros" type="string"></element>
+    		<element name="minvagas" type="string"></element>
+    		<element name="maxvagas" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="cadastro"></complexType>
+
+    <complexType name="endereco">
+    	<sequence>
+    		<element name="cep">
+    			<simpleType>
+    				<restriction base="string">
+    					<pattern value="\d{5}-\d{3}"></pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="numero" type="int"></element>
+    		<element name="bairro" type="string"></element>
+    		<element name="cidade" type="string"></element>
+    		<element name="rua" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

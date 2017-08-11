@@ -1,0 +1,1 @@
+"http://user:12345@EREBUS:8080/trabalho6/CadastrosService?wsdl" 

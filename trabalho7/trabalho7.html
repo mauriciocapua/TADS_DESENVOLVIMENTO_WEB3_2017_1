@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.css" rel="stylesheet" />
+	
+	<title>TRABALHO7</title>
+</head>
+<body>
+
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="functions.js"></script>
+	<!--
+	<div class="container" id=divLogin>
+		<form name="FormLogin" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
+			<h1>AUTENTICAÇÃO</h1>
+			Login: <input type="text" name="flogin">
+			Senha: <input type="text" name="fpassword">
+			<input type="submit" value="Submit">
+		</form> 
+	</div>
+	
+
+	<div class="container" id="divNota" initial : hidden>	-->
+		<div class="container" id="divNota">
+
+			<h1>NOTA DE VENDA</h1> 
+
+			<table class="table">
+				<tr>	
+					<td>Nota<label id=labelNota></label></td>
+					<td>Data<label id=labelData></label></td>
+					<td>Hora<label id=labelHora></label></td>
+				</tr>
+				<tr>	
+					<td>Atendente</td>
+					<td>Nome</td>
+					<td></td>
+				</tr>
+
+
+
+			</table>           
+
+			<table class="table" id="itemTable">
+				<h2>Itens</h2>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Item Codigo</th>
+						<th>Descrição</th>
+						<th>Preço Quantidade</th>
+						<th>Subtotal</th>
+						<th> </th>
+					</tr>
+				</thead>
+				<tbody>
+					<div id="addHere">
+						
+
+					</div>
+					<tr>
+						<td id="numeroLista"></td>
+						<td><input type="text" id="inputItemCodigo"></td>
+						<td><label id="labelDescricao"></label></td>
+						<td><input type="text" id="inputPrecoQuantidade"></td>
+						<td><label id="labelSubTotal"></label></td>
+						<td><button onclick="addTableFunction()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+							<button onclick="myDeleteFunction()" class="btn btn-default btn-xs"><span class="							 glyphicon glyphicon-remove"></span></button></td>
+
+					</tr>
+					<tr>
+							<td></td>
+							<th>Desconto</th>
+							<td><label id="labelPromocao"></label></td>
+							<th>Total</th>
+							<td><label id="labelTotal"></label></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</body>
+		</html>
